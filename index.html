@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tech Transfer Session PLASRECO | INESCOP</title>
+  <meta name="description" content="Sesión online gratuita sobre tecnología plasma para recubrimientos funcionales libres de PFAS en packaging, textil y cuero, en el marco del proyecto PLASRECO." />
+
+  <style>
+    :root {
+      --primary: #3a4a50;
+      --primary-dark: #26343a;
+      --accent: #6fded1;
+      --plasma: #7b3fc8;
+      --aqua: #6fded1;
+      --lime: #b8f36a;
+      --light: #f6f7f8;
+      --line: #d2dde0;
+      --text: #15383b;
+      --muted: #667085;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Barlow", Arial, sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.55;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .page {
+      width: min(1180px, calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    header {
+      border-bottom: 1px solid #d9e8e8;
+      background: var(--white);
+    }
+
+    .topbar {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .brand img {
+      object-fit: contain;
+    }
+
+    .brand .inescop-logo {
+      width: 150px;
+      max-height: 58px;
+    }
+
+    .brand .plasreco-logo {
+      width: 185px;
+      max-height: 58px;
+    }
+
+    nav {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--primary-dark);
+    }
+
+    nav a {
+      color: var(--primary-dark);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 340px;
+      gap: 48px;
+      padding: 70px 0 52px;
+    }
+
+    .section-line {
+      border-top: 2px solid var(--line);
+      padding-top: 34px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(34px, 4vw, 54px);
+      line-height: 1.18;
+      font-weight: 400;
+      color: var(--primary-dark);
+      letter-spacing: -0.02em;
+    }
+
+    .share {
+      margin: 26px 0 42px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .share span.icon {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      border: 1px solid var(--line);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      color: var(--primary);
+    }
+
+    .event-card {
+      background: var(--light);
+      margin-bottom: 38px;
+    }
+
+    .event-image {
+      position: relative;
+      min-height: 355px;
+      background:
+        linear-gradient(90deg, rgba(31, 47, 53, 0.88) 0%, rgba(31, 47, 53, 0.55) 34%, rgba(31, 47, 53, 0.06) 70%),
+        url("PROYECTO.PNG") center / cover no-repeat;
+      overflow: hidden;
+      border: 1px solid rgba(120, 200, 197, 0.55);
+    }
+
+    .event-image::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(38, 52, 58, 0.04);
+      pointer-events: none;
+    }
+
+    .event-date-block {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 250px;
+      min-height: 235px;
+      padding: 32px;
+      background: #7b3fc8;
+      color: var(--white);
+      z-index: 2;
+    }
+
+    .event-date-block strong {
+      display: block;
+      font-size: 35px;
+      line-height: 1.05;
+      text-transform: uppercase;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+
+    .event-date-block .small-line {
+      width: 135px;
+      height: 3px;
+      background: var(--white);
+      margin: 22px 0;
+    }
+
+    .event-date-block p {
+      margin: 0;
+      font-size: 20px;
+      line-height: 1.35;
+      font-weight: 400;
+    }
+
+    .event-logos {
+      position: absolute;
+      left: 260px;
+      right: 24px;
+      bottom: 22px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      z-index: 2;
+      background: rgba(255,255,255,0.92);
+      padding: 12px 16px;
+      width: fit-content;
+      max-width: calc(100% - 290px);
+      border-radius: 4px;
+    }
+
+    .event-logos span {
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .event-logos img {
+      width: auto;
+      height: 34px;
+      max-width: 160px;
+      object-fit: contain;
+    }
+
+    .event-title-strip {
+      padding: 24px 30px 18px;
+      border-left: 7px solid var(--plasma);
+      color: var(--primary-dark);
+      font-size: 23px;
+      line-height: 1.22;
+      font-weight: 700;
+    }
+
+    .event-meta {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      border-top: 1px solid #d9dddd;
+      padding: 18px 24px 22px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .event-meta div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 9px;
+      text-align: center;
+      min-height: 34px;
+    }
+
+    .event-meta .meta-icon {
+      color: var(--plasma);
+      font-size: 20px;
+      line-height: 1;
+    }
+
+    .content p {
+      margin: 0 0 22px;
+      font-size: 16px;
+    }
+
+    .content strong {
+      font-weight: 700;
+    }
+
+    .project-visual {
+      margin: 38px 0 44px;
+      border: 1px solid rgba(120, 200, 197, 0.65);
+      background: #f7f7f8;
+      padding: 12px;
+    }
+
+    .project-visual img {
+      width: 100%;
+      aspect-ratio: 16 / 7;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .project-visual figcaption {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.4;
+    }
+
+    .accordion {
+      margin-top: 42px;
+      border-top: 1px solid var(--line);
+    }
+
+    details {
+      border-bottom: 1px solid var(--line);
+      padding: 0;
+    }
+
+    summary {
+      cursor: pointer;
+      list-style: none;
+      padding: 18px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 18px;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    summary::after {
+      content: "+";
+      border: 1px solid #d2dde0;
+      color: #7b3fc8;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 400;
+      flex: 0 0 auto;
+      margin-left: 14px;
+    }
+
+    details[open] summary::after {
+      content: "−";
+    }
+
+    .accordion-body {
+      padding: 0 0 28px;
+      color: var(--text);
+    }
+
+    .accordion-body p {
+      margin-bottom: 16px;
+    }
+
+    .objectives {
+      margin: 10px 0 0;
+      padding-left: 20px;
+    }
+
+    .objectives li {
+      margin-bottom: 10px;
+    }
+
+    .program {
+      display: grid;
+      gap: 16px;
+      margin-top: 8px;
+    }
+
+    .program-item {
+      display: grid;
+      grid-template-columns: 145px 1fr;
+      gap: 18px;
+      padding: 18px;
+      background: #f7f7f8;
+      border-left: 0;
+      border-top: 1px solid #dfe6e8;
+      position: relative;
+    }
+
+    .program-item::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 5px;
+      background: #7b3fc8;
+    }
+
+    .program-time {
+      color: #7b3fc8;
+      font-weight: 800;
+      font-size: 16px;
+    }
+
+    .program-item h3 {
+      margin: 0 0 4px;
+      font-size: 18px;
+      line-height: 1.25;
+      color: var(--primary-dark);
+    }
+
+    .program-item .speaker {
+      margin: 0 0 8px;
+      color: #7b3fc8;
+      font-weight: 700;
+    }
+
+    .program-item p {
+      margin: 0;
+    }
+
+    .sidebar {
+      color: var(--primary-dark);
+    }
+
+    .sidebar .section-line {
+      padding-top: 28px;
+    }
+
+    .info-block {
+      margin-bottom: 23px;
+    }
+
+    .info-block h2 {
+      margin: 0 0 7px;
+      font-size: 14px;
+      color: var(--primary);
+      font-weight: 800;
+    }
+
+    .info-block p,
+    .info-block ul {
+      margin: 0;
+      color: var(--primary-dark);
+      font-size: 14px;
+    }
+
+    .info-block ul {
+      padding: 0;
+      list-style: none;
+    }
+
+    .info-block li {
+      margin-bottom: 5px;
+    }
+
+    .button {
+      display: block;
+      width: 100%;
+      margin-top: 34px;
+      padding: 15px 20px;
+      text-align: center;
+      color: var(--white);
+      background: #7b3fc8;
+      font-weight: 700;
+      border-radius: 0;
+      transition: opacity 0.2s ease;
+    }
+
+    .button:hover {
+      opacity: 0.88;
+    }
+
+    footer {
+      margin-top: 60px;
+      border-top: 1px solid var(--line);
+      padding: 45px 0 30px;
+      color: var(--primary-dark);
+      font-size: 13px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 42px;
+    }
+
+    footer h2 {
+      margin: 0 0 18px;
+      color: var(--primary);
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    footer p,
+    footer a {
+      color: var(--primary-dark);
+      margin: 0 0 8px;
+      display: block;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid var(--line);
+      margin-top: 40px;
+      padding-top: 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .footer-bottom img {
+      width: 130px;
+      height: auto;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .sidebar {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0 32px;
+      }
+
+      .sidebar .section-line,
+      .sidebar .button {
+        grid-column: 1 / -1;
+      }
+
+      .related-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      nav {
+        display: none;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .page {
+        width: min(100% - 28px, 1180px);
+      }
+
+      .topbar {
+        align-items: flex-start;
+        padding: 18px 0;
+      }
+
+      .brand {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      .brand .inescop-logo {
+        width: 130px;
+      }
+
+      .brand .plasreco-logo {
+        width: 160px;
+      }
+
+      .hero-grid {
+        padding-top: 36px;
+        gap: 28px;
+      }
+
+      .event-image {
+        min-height: 390px;
+      }
+
+      .event-date-block {
+        width: 220px;
+        min-height: 220px;
+      }
+
+      .event-logos {
+        left: 20px;
+        right: 20px;
+        bottom: 20px;
+        max-width: calc(100% - 40px);
+        flex-wrap: wrap;
+      }
+
+      .event-meta {
+        grid-template-columns: 1fr;
+        text-align: left;
+      }
+
+      .event-meta div {
+        justify-content: flex-start;
+        border-bottom: 1px solid #d9dddd;
+        padding: 8px 0;
+      }
+
+      .event-meta div:last-child {
+        border-bottom: 0;
+      }
+
+      .program-item {
+        grid-template-columns: 1fr;
+      }
+
+      .sidebar {
+        display: block;
+      }
+
+      .related-heading {
+        display: block;
+        border-top: 2px solid var(--line);
+        padding-top: 24px;
+      }
+
+      .related-heading::before,
+      .related-heading::after {
+        display: none;
+      }
+
+      .related-heading h2 {
+        transform: none;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+    /* Ajustes cromáticos PLASRECO:
+       base neutra, con acentos puntuales magenta/aqua tomados de la imagen del proyecto. */
+    .section-line {
+      border-top-color: var(--line);
+    }
+
+    h1,
+    .sidebar,
+    .program-item h3,
+    footer p,
+    footer a,
+    nav a {
+      color: var(--primary-dark);
+    }
+
+    a,
+    .info-block h2,
+    summary,
+    footer h2 {
+      color: var(--primary);
+    }
+
+    .share span.icon {
+      border-color: #d2dde0;
+      color: var(--primary);
+    }
+
+    .download-program {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin: 22px 0 34px;
+      padding: 10px 14px;
+      border: 1px solid #d2dde0;
+      color: var(--primary-dark);
+      background: #ffffff;
+      font-size: 14px;
+      font-weight: 700;
+      transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+    }
+
+    .download-program:hover {
+      border-color: var(--plasma);
+      color: var(--plasma);
+      background: #faf8ff;
+    }
+
+    .download-program .pdf-icon {
+      color: var(--plasma);
+      font-size: 17px;
+      line-height: 1;
+    }
+
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="page topbar">
+      <div class="brand">
+        <img src="INESCOP.PNG" alt="INESCOP" class="inescop-logo" />
+        <img src="PLASRECO.PNG" alt="PLASRECO" class="plasreco-logo" />
+      </div>
+
+      <nav aria-label="Navegación principal">
+        <a href="#descripcion">Descripción</a>
+        <a href="#objetivos">Objetivos</a>
+        <a href="#programa">Programa</a>
+        <a href="#inscripcion">Inscripción</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="page hero-grid">
+      <article id="descripcion">
+        <div class="section-line">
+          <h1>Tech Transfer Session – Tecnología plasma para recubrimientos funcionales libres de PFAS en packaging, textil y cuero</h1>
+
+          <div class="share" aria-label="Compartir">
+            Compartir
+            <span class="icon">f</span>
+            <span class="icon">x</span>
+            <span class="icon">in</span>
+          </div>
+
+          <section class="event-card" aria-label="Información destacada del evento">
+            <div class="event-image">
+              <div class="event-date-block">
+                <strong>Tech<br />Transfer<br />Session</strong>
+                <div class="small-line"></div>
+                <p>15 de julio<br />De 10.00 a 11.00 h</p>
+              </div>
+
+              <div class="event-logos">
+                <span>Organiza:</span>
+                <img src="INESCOP.PNG" alt="INESCOP" />
+                <span>Proyecto:</span>
+                <img src="PLASRECO.PNG" alt="PLASRECO" />
+              </div>
+            </div>
+
+            <div class="event-title-strip">
+              PLASRECO – Tecnología plasma para recubrimientos funcionales libres de PFAS en packaging, textil y cuero
+            </div>
+
+            <div class="event-meta">
+              <div><span class="meta-icon">▣</span>15 de julio de 2026</div>
+              <div><span class="meta-icon">◷</span>De 10.00 a 11.00 h</div>
+              <div><span class="meta-icon">€</span>Gratuita</div>
+              <div><span class="meta-icon">●</span>Online</div>
+            </div>
+          </section>
+
+          <a class="download-program" href="PROGRAMA.pdf" target="_blank" rel="noopener" aria-label="Descargar programa en PDF">
+            <span class="pdf-icon">▣</span>
+            Descargar programa en PDF
+          </a>
+
+          <div class="content">
+            <p>
+              La sesión, gratuita y en formato online, se enmarca en las actividades de difusión del proyecto
+              <strong>PLASRECO</strong>, desarrollado por <strong>INESCOP</strong> y <strong>AIMPLAS</strong> con el apoyo de
+              <strong>IVACE+i</strong> y la Generalitat Valenciana.
+            </p>
+
+            <p>
+              PLASRECO nace como respuesta a uno de los grandes retos actuales de los sectores del <strong>packaging</strong>,
+              el <strong>textil</strong> y el <strong>cuero</strong>: la necesidad de sustituir tratamientos funcionales basados
+              en <strong>PFAS</strong> por soluciones más seguras, sostenibles y compatibles con las futuras exigencias normativas.
+            </p>
+
+            <p>
+              Durante la jornada se presentará de forma práctica el potencial de la <strong>tecnología plasma</strong> como
+              herramienta para modificar superficies, activar materiales y aplicar recubrimientos funcionales de bajo impacto
+              ambiental. Se abordarán tanto los fundamentos de la tecnología como sus principales modalidades, incluyendo el
+              <strong>plasma de baja presión</strong> y el <strong>plasma atmosférico</strong>.
+            </p>
+
+            <p>
+              La sesión mostrará cómo el plasma puede utilizarse para <strong>activar superficies</strong> y mejorar la adhesión
+              de recubrimientos posteriores, o bien para <strong>depositar capas funcionales delgadas</strong> directamente sobre
+              distintos sustratos. A partir de esta base, se presentarán aplicaciones potenciales en materiales de packaging,
+              textiles técnicos y cuero, mediante ejemplos visuales, vídeos y casos orientativos.
+            </p>
+
+            <p>
+              El objetivo es ofrecer una visión clara, inspiradora y cercana de la tecnología, sin entrar en detalle experimental,
+              para que los asistentes puedan conocer sus posibilidades, entender sus ventajas frente a procesos convencionales y
+              detectar nuevas líneas de innovación vinculadas a superficies funcionales libres de PFAS.
+            </p>
+          </div>
+
+          <figure class="project-visual">
+            <img src="PROYECTO.PNG" alt="Imagen del proyecto PLASRECO con tecnología plasma aplicada a superficies funcionales" />
+            <figcaption>PLASRECO: tecnología plasma para avanzar hacia recubrimientos funcionales libres de PFAS.</figcaption>
+          </figure>
+
+          <section class="accordion" aria-label="Información desplegable">
+            <details>
+              <summary>A quién va dirigido</summary>
+              <div class="accordion-body">
+                <p>
+                  Esta sesión está dirigida a empresas, profesionales y personal técnico de los sectores del packaging, textil,
+                  cuero y calzado interesados en conocer nuevas soluciones para la funcionalización de superficies y la sustitución
+                  de tratamientos basados en PFAS.
+                </p>
+                <p>
+                  Resultará especialmente útil para responsables de I+D, innovación, sostenibilidad, calidad, producción y desarrollo
+                  de producto que trabajen con materiales que requieran repelencia al agua, resistencia a manchas, efecto barrera,
+                  comportamiento antiadherente, mejora de adhesión o protección superficial.
+                </p>
+              </div>
+            </details>
+
+            <details id="objetivos">
+              <summary>Objetivos</summary>
+              <div class="accordion-body">
+                <p>
+                  El objetivo principal de la sesión es dar a conocer el potencial de la tecnología plasma como solución avanzada
+                  para la activación y funcionalización de superficies en distintos materiales industriales.
+                </p>
+
+                <ul class="objectives">
+                  <li>Conocer los principios básicos de la tecnología plasma y sus principales modalidades de aplicación.</li>
+                  <li>Entender la diferencia entre activar una superficie y depositar un recubrimiento funcional mediante plasma.</li>
+                  <li>Mostrar cómo esta tecnología puede contribuir al desarrollo de soluciones libres de PFAS.</li>
+                  <li>Presentar aplicaciones potenciales en materiales de packaging, textil y cuero.</li>
+                  <li>Acercar a las empresas casos de uso, vídeos demostrativos e ideas de aplicación industrial.</li>
+                  <li>Compartir la visión de INESCOP y AIMPLAS dentro del proyecto PLASRECO.</li>
+                </ul>
+              </div>
+            </details>
+
+            <details id="programa">
+              <summary>Programa</summary>
+              <div class="accordion-body">
+                <div class="program">
+                  <div class="program-item">
+                    <div class="program-time">10.00 – 10.10 h</div>
+                    <div>
+                      <h3>Bienvenida e introducción al proyecto PLASRECO</h3>
+                      <p class="speaker">Modera: María Dolores Romero Sánchez – INESCOP</p>
+                      <p>Apertura de la sesión, contextualización del proyecto y presentación de los principales retos asociados a la sustitución de PFAS en packaging, textil y cuero.</p>
+                    </div>
+                  </div>
+
+                  <div class="program-item">
+                    <div class="program-time">10.10 – 10.20 h</div>
+                    <div>
+                      <h3>Tecnología plasma: conceptos básicos y posibilidades industriales</h3>
+                      <p class="speaker">Víctor M. Serrano Martínez – INESCOP</p>
+                      <p>Introducción visual a la tecnología plasma, diferenciando entre plasma de baja presión y plasma atmosférico, y explicando sus ventajas para el tratamiento de superficies.</p>
+                    </div>
+                  </div>
+
+                  <div class="program-item">
+                    <div class="program-time">10.20 – 10.30 h</div>
+                    <div>
+                      <h3>Activación superficial y deposición de recubrimientos: dos enfoques complementarios</h3>
+                      <p class="speaker">Carlos Ruzafa Silvestre – INESCOP</p>
+                      <p>Presentación de las principales estrategias de tratamiento mediante plasma: activación superficial para mejorar la adhesión y deposición de capas funcionales sobre materiales complejos.</p>
+                    </div>
+                  </div>
+
+                  <div class="program-item">
+                    <div class="program-time">10.30 – 10.40 h</div>
+                    <div>
+                      <h3>Recubrimientos libres de PFAS: formulación y diseño de soluciones funcionales</h3>
+                      <p class="speaker">Blai López Rius – AIMPLAS</p>
+                      <p>Enfoque del proyecto para el desarrollo de recubrimientos sostenibles en base silicio, orientados a aportar repelencia a líquidos, resistencia a manchas y comportamiento antiadherente.</p>
+                    </div>
+                  </div>
+
+                  <div class="program-item">
+                    <div class="program-time">10.40 – 10.50 h</div>
+                    <div>
+                      <h3>Aplicaciones en packaging, textil y cuero: ejemplos, vídeos e ideas de transferencia</h3>
+                      <p class="speaker">Valentina Orlandi – AIMPLAS</p>
+                      <p>Presentación de posibles aplicaciones mediante ejemplos visuales y vídeos demostrativos en envases, materiales celulósicos, textiles técnicos, acabados para cuero y productos relacionados con calzado.</p>
+                    </div>
+                  </div>
+
+                  <div class="program-item">
+                    <div class="program-time">10.50 – 11.00 h</div>
+                    <div>
+                      <h3>Debate final y turno de preguntas</h3>
+                      <p class="speaker">Modera: María Dolores Romero Sánchez – INESCOP</p>
+                      <p>Espacio abierto para resolver dudas, comentar oportunidades de aplicación industrial y recoger intereses de empresas en torno a la tecnología plasma y los recubrimientos libres de PFAS.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </details>
+          </section>
+        </div>
+      </article>
+
+      <aside class="sidebar" aria-label="Detalles del evento">
+        <div class="section-line">
+          <div class="info-block">
+            <h2>Fecha</h2>
+            <p>15/07/2026</p>
+          </div>
+
+          <div class="info-block">
+            <h2>Horario</h2>
+            <p>10.00 h a 11.00 h</p>
+          </div>
+
+          <div class="info-block">
+            <h2>Horas lectivas</h2>
+            <p>1 h</p>
+          </div>
+
+          <div class="info-block">
+            <h2>Programa</h2>
+            <p><a href="PROGRAMA.pdf" target="_blank" rel="noopener">Descargar PDF</a></p>
+          </div>
+
+          <div class="info-block">
+            <h2>Lugar</h2>
+            <p>Online</p>
+          </div>
+
+          <div class="info-block">
+            <h2>Tipo</h2>
+            <ul>
+              <li>#INESCOPTecTalks</li>
+              <li>Sesión de transferencia tecnológica</li>
+              <li>Sesión de resultados de I+D+i</li>
+            </ul>
+          </div>
+
+          <div class="info-block">
+            <h2>Modalidad</h2>
+            <p>Online</p>
+          </div>
+
+          <div class="info-block">
+            <h2>Temática</h2>
+            <ul>
+              <li>Tecnología plasma</li>
+              <li>Recubrimientos funcionales</li>
+              <li>Materiales libres de PFAS</li>
+              <li>Packaging sostenible</li>
+              <li>Textil técnico</li>
+              <li>Cuero y calzado</li>
+              <li>Sostenibilidad y economía circular</li>
+            </ul>
+          </div>
+
+          <div class="info-block">
+            <h2>Sectores</h2>
+            <ul>
+              <li>Packaging</li>
+              <li>Textil</li>
+              <li>Cuero</li>
+              <li>Calzado</li>
+              <li>Materiales avanzados</li>
+              <li>Recubrimientos y acabados</li>
+            </ul>
+          </div>
+
+          <div class="info-block">
+            <h2>Organizado por</h2>
+            <p>INESCOP, en colaboración con AIMPLAS</p>
+          </div>
+
+          <div class="info-block">
+            <h2>Precio</h2>
+            <p>Gratuito</p>
+          </div>
+
+          <a href="#inscripcion" class="button" id="inscripcion">Inscribirse</a>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    <div class="page">
+      <div class="footer-grid">
+        <div>
+          <h2>Oficinas</h2>
+          <p>Polígono Industrial Campo Alto</p>
+          <p>C/ Alemania, 102</p>
+          <p>03600 Elda, Alicante</p>
+          <p>Tel: +34 965 395 213</p>
+          <p>Correo electrónico: <a href="mailto:formacion@inescop.es">formacion@inescop.es</a></p>
+        </div>
+
+        <div>
+          <h2>Sitemap</h2>
+          <a href="https://www.inescop.es/es/" target="_blank" rel="noopener">Acerca de INESCOP</a>
+          <a href="https://www.inescop.es/es/actualidad/noticias" target="_blank" rel="noopener">Actualidad</a>
+          <a href="https://formacion.inescop.es/es/agenda.html" target="_blank" rel="noopener">Eventos</a>
+          <a href="mailto:formacion@inescop.es">Contacto</a>
+        </div>
+
+        <div>
+          <h2>Social</h2>
+          <a href="https://www.linkedin.com/company/inescop/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://www.facebook.com/inescopTech/" target="_blank" rel="noopener">Facebook</a>
+          <a href="https://x.com/InescopTech" target="_blank" rel="noopener">X / Twitter</a>
+          <a href="https://www.youtube.com/channel/UCSxLGsyLr17EScq1hKFjbLA" target="_blank" rel="noopener">YouTube</a>
+        </div>
+
+        <div>
+          <h2>Legal</h2>
+          <a href="#">Aviso legal</a>
+          <a href="#">Política de privacidad</a>
+          <a href="#">Política de cookies</a>
+          <a href="#">Transparencia</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <img src="INESCOP.PNG" alt="INESCOP" />
+        <span>© 2026 INESCOP. Todos los derechos reservados.</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
